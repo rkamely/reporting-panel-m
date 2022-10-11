@@ -1,0 +1,187 @@
+@import "../../../Styles/variables";
+@import "../../../Styles/mainStyles";
+@import "../../../Styles/mixins";
+
+
+
+.footerContainer{
+  width: 100%;
+  background-color: #fafafa;
+  padding: 50px 0;
+  margin-top: 40px;
+  ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    li{
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+      a{
+        font-family: 'yekan';
+        font-size: 14px;
+        transition-duration: 0.3s;
+        color: #b8b8b8;
+        @include transitionMaker(0.3s);
+        &:hover{
+          color: #828282;
+        }
+      }
+    }
+  }
+
+  .footerFrame{
+    display: flex;
+    h3{
+      font-family: 'yekan';
+      color: #676767;
+      font-size: 1.2em;
+      font-weight: 100;
+      letter-spacing: 0px;
+    }
+    .footerSignature{
+      width: 20%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      flex-direction: column;
+
+      img{
+        width: 100px;
+      }
+      h3{
+        letter-spacing: 6px;
+        font-weight: 100;
+        font-size: 25px;
+        font-family: fantasy;
+        margin: 7px;
+      }
+    }
+    .footerLinks{
+      width: 25%;
+    }
+    .footerContact{
+      width: 25%;
+      li{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      p{
+        font-family: 'yekan';
+        color: #7a7a7a;
+      }
+    }
+    .footerNewsletter{
+      width: 30%;
+      h5{
+        font-family: 'yekan';
+        font-weight: 100;
+        font-size: 13px;
+        margin: 0;
+        line-height: 20px;
+        color: #ababab;
+        margin-bottom: 25px;
+      }
+      p{
+        font-family: 'yekan';
+        color: #7a7a7a;
+      }
+      .newsletterButton{
+        font-family: 'yekan';
+        background-color: $warningColor;
+        height: 41px;
+        color: #fff;
+        padding: 0 8px;
+        width: 100px;
+        outline: none;
+        font-size: 14px !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+        border: none;
+      }
+    }
+  }
+}
+.newsletterInput{
+  border: none !important;
+  border-bottom: 1px solid #afafaf !important;
+  width: 80%;
+  direction: rtl;
+  height: 41px;
+  padding: 12px;
+  input{
+    font-family: 'yekan';
+    text-align: right;
+    &::-webkit-input-placeholder { /* Edge */
+      font-size: 15px;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 15px;
+    }
+
+    &::placeholder {
+      font-size: 15px;
+    }
+  }
+  svg{
+    font-size: 26px;
+    color: $titleColorOnWhite;
+  }
+}
+.subFooter{
+  background-color: #fff;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #efeeee;
+  p{
+    @extend .rtlText;
+    font-size: 12px;
+    color: #a2a2a2;
+    //letter-spacing: -1px;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .footerContainer{
+    .footerFrame{
+      display: flex;
+      flex-direction: column;
+      .footerSignature{
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 35px;
+        img{
+          width: 100px;
+        }
+      }
+      .footerLinks{
+        width: 100%;
+        margin-bottom: 35px;
+      }
+      .footerContact{
+        width: 100%;
+        margin-bottom: 35px;
+      }
+      .footerNewsletter{
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .footerSignature{
+        align-items: center;
+      }
+    }
+  }
+}

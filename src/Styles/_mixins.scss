@@ -1,0 +1,86 @@
+
+@mixin borderRadius($radius) {
+  border-radius: $radius !important;
+  -webkit-border-radius: $radius !important;
+  -moz-border-radius: $radius !important;
+  -ms-border-radius: $radius !important;
+  -o-border-radius: $radius !important;
+}
+@mixin flexDirection($direction){
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  -o-flex-direction: $direction;
+}
+@mixin justifyContent($content){
+  justify-content: $content;
+  -webkit-justify-content: $content;
+  -moz-justify-content: $content;
+  -ms-justify-content: $content;
+  -o-justify-content: $content;
+}
+@mixin transitionMaker($delay){
+  transition-duration: $delay;
+  -webkit-transition-duration: $delay;
+  -moz-transition-duration: $delay;
+}
+@mixin boxShadow($var1, $var2, $var3, $var4){
+  -webkit-box-shadow: $var1 $var2 $var3 $var4;
+  -moz-box-shadow: $var1 $var2 $var3 $var4;
+  box-shadow: $var1 $var2 $var3 $var4;
+}
+@mixin gradiantMaker($var1, $var2, $var3){
+  background: linear-gradient($var1+deg $var2 $var3) ;
+}
+
+
+@mixin material-design-box-shadow($level:1){
+  @if $level == 1 {
+    @include box-shadow(0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24));
+  }
+  @else if $level == 2 {
+    @include box-shadow(0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23));
+  }
+  @else if $level == 3 {
+    @include box-shadow(0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23));
+  }
+  @else if $level == 4 {
+    @include box-shadow(0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22));
+  }
+  @else if $level == 5 {
+    @include box-shadow(0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22));
+  }
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin line-height($size){
+  line-height: $size;
+  height: $size;
+}
+@mixin opacity-display($visibility){
+  @if($visibility == visible){
+    @include opacity(1);
+    visibility: visible;
+  }
+  @else if($visibility == hidden){
+    @include opacity(0);
+    visibility: hidden;
+
+  }
+}
+
+@mixin mainComplementBtn ($bg, $color, $radius){
+  background-color: $bg !important;
+  color: $color !important;
+  text-transform: capitalize !important;
+  @include border-radius($radius);
+}
+@mixin mainDropDown ($fontSize, $paddingRL, $paddingUD){
+  font-size: $fontSize !important;
+  padding: $paddingRL $paddingUD !important;
+}

@@ -1,0 +1,1375 @@
+@import "variables";
+@import "mixins";
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #10171d;
+  color: #dfdfdf;
+
+  .dark-mode-toggle > button {
+    color: #999;
+    &:last-child {
+      color: #03a9f4 !important;
+      font-size: 24px !important;
+    }
+  }
+  .mainHeaderDashboardFrame{
+    background-color: #000;
+    box-shadow: 0 0 36px #2b2b2b;
+  }
+}
+
+.navbar {
+  top: 0;
+  width: 100%;
+  display: flex;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  margin-right: 10px;
+  // margin: 0 auto;
+  & > button {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: #ffe600;
+    cursor: pointer;
+    font-size: 24px !important;
+    transition: color 0.3s ease;
+    &:last-child {
+      color: #666;
+      font-size: 24px !important;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.toggle-control {
+  position: relative;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+input[type='checkbox'].dmcheck {
+  width: 40px;
+  height: 24px;
+  background: #848484;
+  position: relative;
+  border-radius: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+
+  &:checked + label {
+    left: 7px;
+  }
+
+  &:focus-visible {
+    outline: solid 2px white;
+  }
+
+  & + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 21px;
+    background: #fff;
+    opacity: 0.9;
+    background-color: #f6f6f6;
+  }
+}
+
+
+
+
+
+
+
+.rtlText{
+  font-family: 'sans';
+  //direction: rtl;
+}
+button{
+  outline: none !important;
+}
+.chartStyleFrame{
+  direction: ltr !important;
+  width: 100%;
+  height: 400px;
+}
+.flexSpaceBetweenStyle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hiddenDivider{
+  height: 15px;
+  background-color: transparent !important;
+}
+.backdropLayer{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 102;
+}
+.notFoundTitle{
+  @extend .rtlText;
+  font-size: 1.6em;
+  color: $titleColorOnWhite;
+  text-shadow: 0 5px 36px #000;
+}
+.columnDirectionCenterAlign{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.justColumnDirection {
+  display: flex;
+  flex-direction: column;
+}
+.justBlueTextButton{
+  color: $lightBlue !important;
+  background-color: transparent !important;
+  font-size: 13px !important;
+  letter-spacing: 0 !important;
+}
+.halfWidth{
+  width: 50%;
+}
+.boldFont{
+  font-weight: 900 !important;
+}
+.simpleTextOnWhite{
+  @extend .rtlText;
+  font-size: 14px !important;
+  margin: 10px 0 0 !important;
+  font-weight: 100;
+  text-align: justify;
+  line-height: 23px;
+}
+.simpleWhiteText{
+  @extend .rtlText;
+  font-size: 14px !important;
+  margin: 10px 0 0 !important;
+  font-weight: 100;
+  text-align: justify;
+  line-height: 23px;
+  color: #fff;
+}
+.approveDialogButton{
+  @extend .rtlText;
+  background-color: #ebebeb !important;
+  padding: 10px 15px;
+  color: #727272;
+  outline: none;
+  font-size: 13px;
+}
+.MuiDialog-paperWidthSm {
+  max-width: 600px;
+  min-width: 350px;
+}
+.justRelativePosition{
+  position: relative;
+}
+.disableInputStyle{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.58);
+  z-index: 101;
+}
+.simpleJustText{
+  @extend .rtlText;
+  margin: 0;
+  font-size: 14px !important;
+  font-weight: 100;
+  color: $titleColorOnWhite;
+}
+
+.resetPadding{
+  padding: 0;
+}
+.selectedInputText{
+  background-color: #e9f8ff !important;
+}
+.sublistRightPadding{
+  padding-right: 25px;
+}
+.loadingNonTransparentBackDrop{
+  position: absolute;
+  width: 100%;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  z-index: 100000;
+  top: -40px;
+  padding-bottom: 60px;
+  h3{
+    @extend .rtlText;
+    color: $lightBlue;
+    font-weight: 100;
+  }
+}
+.loadingBackDrop{
+  position: absolute;
+  width: 100%;
+  min-height: 600px;
+  height: 110%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  //background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(3px);
+  z-index: 1008;
+  top: -40px;
+  padding-top: 250px;
+  padding-bottom: 60px;
+  h3{
+    @extend .rtlText;
+    color: $lightBlue;
+    font-weight: 100;
+  }
+}
+.centerizeSignature{
+  img{
+    width: 85px;
+    padding: 0 10px;
+  }
+}
+.persianSignature{
+  font-family: 'sans';
+  font-weight: 100;
+  color: #fff;
+  margin: 0;
+  font-size: 32px;
+}
+.englishSignature{
+  color: #fff;
+  font-weight: 100;
+  margin: 0;
+  position: relative;
+  font-size: 32px;
+  font-family: monospace;
+}
+.loadingBackDropFullWidth{
+  position: fixed;
+  width: 100%;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  z-index: 100000;
+  top: -40px;
+  padding-bottom: 60px;
+  h3{
+    @extend .rtlText;
+    color: $lightBlue;
+    font-weight: 100;
+  }
+}
+.loadingRelativeBackDrop{
+  @extend .loadingBackDropFullWidth;
+  position: absolute;
+  h3{
+    @extend .rtlText;
+    color: $lightBlue;
+    font-weight: 100;
+  }
+}
+.topSMMargin{
+  margin-top: 6px;
+}
+.loadingDarkBackDrop{
+  position: absolute;
+  width: 100%;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(55, 55, 55, 0.78);
+  z-index: 100000;
+  top: -40px;
+  padding-bottom: 60px;
+  h3{
+    @extend .rtlText;
+    color: $lightBlue;
+    font-weight: 100;
+  }
+}
+.calculateBackDrop{
+  position: absolute;
+  width: 100%;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  z-index: 100000;
+  top: -40px;
+  padding-bottom: 60px;
+
+}
+.errorModalHeader{
+  width: 100%;
+  background-color: $errorColor !important;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 100 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between;
+  svg{
+    font-size: 28px;
+    margin-left: 3px !important;
+    color: #fff;
+    position: relative;
+    top: -2px;
+  }
+  h2{
+    @extend .rtlText;
+    color: #fff !important;
+    margin: 0;
+    display: flex;
+    width: 100% !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    div{
+      display: flex;
+      align-items: center;
+    }
+    button{
+      border: none;
+      background: transparent;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg{
+        font-size: 24px;
+        color: #fff;
+      }
+    }
+  }
+  .closeDialogBtn{
+    svg{
+      color: #fff !important;
+    }
+  }
+}
+.jalaali.calendarContainer .selectToday {
+  padding: 4px 0 6px 0;
+  height: 52px;
+  background: #00d06b;
+}
+.today button {
+  border: 3px solid $darkOrange!important;
+}
+.calendarContainer .selected button, .calendarContainer .selected button:active, .calendarContainer .selected button:focus, .calendarContainer .selected button:hover {
+  background-color: $darkOrange;
+  color: #fff;
+}
+.customModalHeader{
+  width: 100%;
+  background-color: $darkOrange !important;
+  text-align: right;
+  font-size: 22px;
+  direction: rtl;
+  font-weight: 100 !important;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center !important;
+  padding: 20px 25px;
+  color: #fff;
+  svg{
+    font-size: 28px;
+  }
+  h4{
+    @extend .rtlText;
+    color: #fff !important;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 100;
+    margin-right: 9px !important;
+    justify-content: space-between;
+  }
+}
+.customErrorModalHeader{
+  width: 100%;
+  background-color: $orangeMaterial !important;
+  text-align: right;
+  font-size: 22px;
+  font-weight: 100 !important;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center !important;
+  padding: 15px;
+  color: #fff;
+
+  h4{
+    @extend .rtlText;
+    color: #fff !important;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 100;
+    margin-right: 9px !important;
+    justify-content: space-between;
+  }
+  .dialogIcon{
+    font-size: 26px;
+  }
+  .closeIcon{
+    font-size: 24px;
+  }
+}
+.customBlueModalHeader{
+  width: 100%;
+  background: -webkit-linear-gradient(to right, #00c6ff, #03A9F4) !important;
+  background: linear-gradient(to right, #00c6ff, #03A9F4) !important;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 100 !important;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center !important;
+  svg{
+    font-size: 28px;
+    margin-left: 3px !important;
+  }
+  h2{
+    @extend .rtlText;
+    color: #fff !important;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    font-size: 15px;
+    justify-content: space-between;
+  }
+}
+.approveActionModalHeader{
+  width: 100%;
+  background: -webkit-linear-gradient(to right, #00d06b, #21ba45) !important;
+  background: linear-gradient(to right, #00d06b, #21ba45) !important;
+  text-align: right;
+  font-size: 22px;
+  direction: rtl;
+  font-weight: 100 !important;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center !important;
+  padding: 20px 10px;
+  color: #fff;
+  svg{
+    font-size: 28px;
+  }
+  h4{
+    @extend .rtlText;
+    color: #fff !important;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 100;
+    margin-right: 9px !important;
+    justify-content: space-between;
+  }
+}
+
+.minusLetterSpacing{
+  letter-spacing: -1px;
+}
+.modalContent{
+  padding: 15px 25px !important;
+  display: flex;
+  font-size: 14px;
+  overflow-x: hidden;
+  min-height: 70px;
+  background-color: #fff;
+  font-family: sans !important;
+  p{
+    direction: rtl !important;
+    text-align: right;
+    font-size: 14px;
+    color: $textColorOnWhite;
+    font-family: sans !important;
+
+  }
+  .dialogMessage{
+    direction: rtl !important;
+    text-align: right;
+    font-size: 16px;
+    color: $textColorOnWhite;
+    font-family: sans !important;
+  }
+  .errorIcon{
+    color: $errorColor;
+    font-size: 45px;
+  }
+}
+.successModalHeader{
+  background-color: $successColor !important;
+}
+.relativeNavbarPage{
+  margin-top: 65px;
+  h1{
+    @extend .rtlText;
+  }
+}
+.datepickerStyle{
+  .heading{
+    .title{
+      font-size: 16px;
+      color: darken($titleColorOnWhite, 4);
+      letter-spacing: -1px;
+    }
+  }
+}
+.headerImage{
+  width: 100%;
+}
+.bodyColorGray{
+  background-color: #fafafa;
+}
+.leftAlignElement{
+  position: relative;
+  float: left;
+}
+.checkBoxStyle{
+  span{
+    font-size: 13px !important;
+    font-weight: 900;
+  }
+}
+.customDialogHeader{
+  background: #00c6ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00c6ff, #03A9F4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00c6ff, #03A9F4);
+  width: 100% !important;
+  h2{
+    @extend .rtlText;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #ffffff;
+    svg{
+      color: #ffffff;
+      font-size: 26px;
+    }
+  }
+}
+.itemsPlaceHolder{
+  padding: 30px 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  li{
+    width: 23%;
+  }
+}
+.customDialogText{
+  font-family: 'sans' !important;
+  color: $titleColorOnWhite !important;
+  font-size: 20px !important;
+}
+.customDialogTextAsMessage{
+  font-family: 'sans' !important;
+  color: $titleColorOnWhite !important;
+  font-size: 15px !important;
+}
+.dialogActionFrame{
+  justify-content: flex-end !important;
+  margin-bottom: 5px;
+}
+.dialogActionBtn{
+  @extend .rtlText;
+  background: #fff !important;
+  color: $materialBlue !important;
+  letter-spacing: -1px !important;
+  font-size: 15px !important;
+  padding: 5px 20px !important;
+  border: 1px solid lighten($materialBlue, 5) !important;
+  outline: none;
+  margin: 4px !important;
+  @include borderRadius(4px);
+}
+.approveDialog{
+  @extend .dialogActionBtn;
+  background-color: #21c200;
+  margin: 20px 10px;
+  padding: 13px 30px;
+}
+.cancelDialog{
+  @extend .dialogActionBtn;
+  background-color: $errorColor;
+}
+.flexColumnsCenterAlign{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.customPrimaryBtn{
+  @extend .rtlText;
+  background: #00c6ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #03A9F4, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #03A9F4, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff !important;
+  min-height: 57px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 10px;
+  padding: 0 35px !important;
+  font-size: 15px !important;
+  letter-spacing: -1px !important;
+  @include borderRadius(3px);
+
+  &:hover{
+    background-color: $lightBlue;
+    color: #fff;
+  }
+  svg{
+    margin-right: 5px;
+    font-size: 24px;
+  }
+}
+.simplePinkBtn{
+  @extend .rtlText;
+  color: #fff;
+  background-color: #db287b;
+  padding: 13px 15px;
+  @include borderRadius(3px);
+  p{
+    font-family: 'Calibri' !important;
+  }
+ }
+.pageContentFrame{
+  padding: 4% 40px;
+  background-color: #fff;
+  section{
+    display: flex;
+    justify-content: center;
+    h2{
+      @extend .rtlText;
+      text-align: center;
+      margin-bottom: 30px;
+      padding-bottom: 7px;
+      border-bottom: 3px dashed #e4e4e4;
+      color: #03a9f4;
+      font-size: 34px;
+    }
+  }
+  p{
+    color: #767676;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 30px;
+  }
+  .darkRegText{
+    color: #9a9a9a !important;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 48px;
+  }
+}
+.noWallpaperAsHeader{
+  padding-top: 125px;
+}
+.ui.segment {
+  position: relative;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.hasNotRegisterLink{
+  color: #fff !important;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  padding: 18px 45px;
+  box-shadow: 0 5px 16px #e1e1e1;
+  background: #FF9800;
+  margin-top: 30px;
+  font-size: 15px !important;
+  @include borderRadius(100px);
+
+  &:hover{
+    color: #fff;
+  }
+}
+.customInput{
+  background-color: $mainAuthenBg;
+  border: 1px solid darken($lightSilver, 8) !important;
+  @include borderRadius(8px);
+  @include transitionMaker(0.5s);
+  input[type='text'], input[type= 'password']{
+    font-family: 'sans' !important;
+    text-align: right !important;
+    color: lighten($textColorOnWhite, 8);
+    font-size: 20px;
+    height: 55px;
+    background: $mainAuthenBg;
+    padding: 5px 15px;
+    box-shadow: none;
+    @include borderRadius(8px);
+    @include transitionMaker(0.3s);
+
+    &:hover{
+      background-color: $mainAuthenBg !important;
+    }
+    //&:focus{
+    //  background-color: darken(#ffffff, 4) !important;
+    //}
+  }
+  &:hover{
+    border: 1px solid lighten($setareGreenLogo, 5) !important;
+    @include borderRadius(8px);
+  }
+  &:focus{
+    border: 1px solid lighten($setareGreenLogo, 8) !important;
+    @include borderRadius(8px);
+  }
+}
+.customCenterInput{
+  background-color:  #fff;
+  border: 1px solid lighten($middleSilver, 2) !important;
+
+  input[type='text'], input[type= 'password']{
+    font-family: 'sans' !important;
+    text-align: center !important;
+    color: $textColorOnWhite;
+    font-size: 18px;
+    height: 55px;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 2px !important;
+    padding: 5px 15px;
+    @include borderRadius(2px);
+    @include transitionMaker(0.3s);
+
+    &:hover{
+      background-color: #f9f9f9 !important;
+    }
+    &:focus{
+      background-color: darken(#f9f9f9, 2) !important;
+    }
+  }
+}
+
+.MuiCollapse-wrapperInner{
+  direction: rtl !important;
+}
+.MuiTooltip-tooltip {
+  background-color: $grayMaterial !important;
+  color: #fff;
+  padding: 7px 15px !important;
+  font-family: 'sans' !important;
+  font-size: 12px !important;
+  direction: rtl !important;
+}
+
+
+.customTextArea{
+  @extend .rtlText;
+  text-align: right !important;
+  color: #3c3c3c;
+  font-size: 18px;
+  width: 100%;
+  height: 100px !important;
+  border: none !important;
+  border-radius: 2px !important;
+  resize: none;
+  padding: 13px;
+  background: #efefef;
+  outline: none;
+  margin-bottom: 10px;
+  @include borderRadius(2px);
+  @include boxShadow(0px, 2px, 4px, #aaa);
+}
+.sectionFrame{
+  padding: 5% 20px;
+  position: relative;
+}
+.sectionHeader{
+  @extend .rtlText;
+  color: $lightBlue;
+  font-size: 2.5em;
+  font-weight: 100;
+  text-align: center;
+  svg{
+    position: relative;
+    top: 4px;
+    margin-left: 12px;
+  }
+}
+.sectionDescription{
+  color: $textColorOnWhite;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  padding: 0 30px 0 187px;
+  text-align: justify;
+}
+.transparentBtn{
+  border: none !important;
+  background-color: transparent;
+  outline: none;
+}
+.dialogFrameStyle{
+  //width: 30% !important;
+}
+.dialogHeaderStyle{
+  background: #f4f3f3;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+  padding: 0 10px !important;
+  height: 60px !important;
+  svg{
+    color: #4d4d4d;
+    font-size: 24px;
+    top: -2px;
+    position: relative;
+  }
+  h2{
+    @extend .rtlText;
+    margin: 0 !important;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.dialogContentText{
+  visibility: hidden;
+}
+.inputWithIconStyle{
+  width: 100%;
+  border: 1px solid #b9b9b9;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  @include borderRadius(2px);
+  .inputWithIconStyleIconText{
+    p{
+      @extend .rtlText;
+      font-size: 13px;
+    }
+  }
+  &:hover{
+    border: 1px solid #b9b9b9 !important;
+  }
+  svg{
+    color: #9f9f9f;
+  }
+  input{
+    @extend .rtlText;
+    font-size: 13px;
+  }
+}
+.simpleOutlineLinkBtn{
+  background: transparent !important;
+  letter-spacing: -1px !important;
+  margin: 0 14px !important;
+  position: relative;
+  top: 10px;
+  color: #737373 !important;
+  padding: 5px 10px !important;
+  border: 1px solid #9f9f9f !important;
+}
+.inputWithIconCustomStyle{
+  width: 50%;
+  border: 1px solid #b9b9b9;
+  height: 55px;
+  display: flex !important;
+  font-size: 18px;
+  align-items: center;
+  margin: 20px 0 20px;
+  padding: 0 10px;
+  @include borderRadius(2px);
+  .inputWithIconStyleIconText{
+    p{
+      @extend .rtlText;
+      font-size: 13px;
+    }
+  }
+  &:hover{
+    border: 1px solid #b9b9b9 !important;
+  }
+  svg{
+    color: #9f9f9f;
+    font-size: 18px;
+  }
+  input{
+    @extend .rtlText;
+    font-size: 15px;
+    color: $darkSilver;
+  }
+}
+
+.enteredPriceForApprovement{
+  @extend .rtlText;
+  color: $successColor;
+  font-size: 28px;
+  margin-right: 20px;
+}
+.enteredPriceGrayLabel{
+  @extend .rtlText;
+  color: $middleSilver;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: 100;
+}
+.disableRegLayer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.h6GrayTitle{
+  margin: 0;
+  @extend .rtlText;
+  color: $titleColorOnWhite;
+}
+.dialogTextarea{
+  @extend .rtlText;
+  border: 1px solid #b9b9b9;
+  font-size: 13px;
+  background-color: #ffffff;
+  width: 100% !important;
+  min-height: 120px;
+  outline: none;
+  padding: 15px;
+  position: relative;
+  //top: -30px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.submitSmallBtn{
+  background-color: $lightBlue !important;
+  float: left;
+  color: #fff !important;
+  position: relative;
+  top: -10px;
+  height: 50px !important;
+  padding: 0 18px !important;
+  letter-spacing: 0 !important;
+  border-radius: 2px !important;
+  width: 100%;
+  font-size: 15px !important;
+}
+.paymentSmallBtn{
+  background-color: $successColor !important;
+  float: left;
+  color: #fff !important;
+  top: -10px;
+  padding: 12px 18px !important;
+  border-radius: 2px !important;
+  width: 170px;
+  font-size: 16px !important;
+}
+.outlineSetNewBtn{
+  background-color: transparent !important;
+  border-color: $lightBlue !important;
+  letter-spacing: -1px !important;
+  height: 45px !important;
+  color: $lightBlue !important;
+  margin-top: 11px !important;
+  margin-right: 10px !important;
+  border-radius: 2px !important;
+  font-size: 14px !important;
+  padding: 0 30px !important;
+}
+.simpleDeviderLine{
+  width: 100%;
+  height: 1px;
+  background-color: #e3e3e3;
+  border: none;
+  margin: 15px 0 10px;
+}
+
+.customTextarea{
+  @extend .rtlText;
+  font-size: 13px;
+  background-color: #f7f7f7;
+  width: 90% !important;
+  border: none;
+  min-height: 100px;
+  outline: none;
+  padding: 15px;
+  max-height: 135px;
+  resize: none;
+}
+.ltrDirection{
+  direction: ltr !important;
+}
+.fullWidth{
+  width: 100% !important;
+}
+.calendarContainer{
+  box-shadow: none !important;
+}
+.inRowFlexItems{
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+.inRowFlexItemsWrap {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+}
+.centerItemsColumns{
+  text-align: center;
+}
+.centerMargin{
+  margin: 0 auto;
+}
+.inRowFlexItemsSpaceBetween{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.inRowFlexItemsFlexStart{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.rowSpaceBetween{
+  justify-content: space-between;
+}
+.flexStartAlign{
+  align-items: flex-start;
+}
+.centerJustifyContent{
+  display: flex;
+  justify-content: center;
+}
+.spaceAroundItems{
+  justify-content: space-around;
+}
+.spaceBetweenItems{
+  justify-content: space-between;
+}
+.justCenterAlign{
+  align-items: center;
+}
+
+.spinnerBackDrop{
+  position: relative;
+  padding-top: 70px;
+}
+.selectButtonInInputFrame{
+  width: 80% !important;
+  font-family: 'sans' !important;
+  text-align: right !important;
+  color: $textColorOnWhite;
+  font-size: 16px;
+  height: 40px;
+  background: #fff !important;
+  border: 1px solid lighten($middleSilver, 2) !important;
+  box-shadow: none;
+  border-radius: 2px !important;
+  padding: 5px 15px;
+  transition-duration: 0.3s;
+}
+.outlinedBorderButton{
+  @extend .rtlText;
+  background-color: transparent !important;
+  border: 1px solid $darkSilver !important;
+  border-radius: 3px !important;
+  color: darken($darkSilver,4) !important;
+  padding: 11px 20px !important;
+  font-size: 13px !important;
+  letter-spacing: 0 !important;
+  &:hover{
+    text-decoration: none !important;
+  }
+}
+.formContentFrame{
+  padding: 5px;
+}
+.profileFormFrame{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  justify-content: space-around;
+}
+.autoCompleteStyle{
+  @extend .rtlText;
+  width: 100%;
+  border: 1px solid #b9b9b9;
+  border-radius: 2px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  div{
+    width: 100%;
+    direction: ltr;
+    label{
+      @extend .rtlText;
+      float: right;
+      right: 28px;
+    }
+    div{
+      padding-right: 10px !important;
+      input{
+        @extend .rtlText;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/******************************** marerial overrid *******************************/
+.MuiInput-underline:after {
+  border-bottom: 2px solid $lightBlue !important;
+}
+.MuiInput-underline:before{
+  border-bottom: 0 !important;
+}
+.MuiInput-underline:after{
+  border-bottom: 0 !important;
+}
+.MuiRadio-root {
+  color: rgba(131, 131, 131, 0.54) !important;
+}
+.MuiPickersTimePickerToolbar-toolbarAmpmLeftPadding {
+  padding-left: 0 !important;
+}
+.MuiPickersClockNumber-clockNumber{
+  font-family: 'sans' !important;
+}
+.MuiPickersTimePickerToolbar-toolbarAmpmLeftPadding{
+  display: flex;
+  flex-direction: row-reverse !important;
+}
+
+.MuiButton-label{
+  h2{
+    @extend .rtlText;
+  }
+}
+.MuiPickersTimePickerToolbar-hourMinuteLabel {
+  flex-direction: row-reverse !important;
+}
+.MuiInput-underline:hover {
+  //border: none !important;
+}
+.MuiRadio-colorPrimary.Mui-checked, .MuiCheckbox-colorPrimary.Mui-checked {
+  color: #03a9f4 !important;
+}
+.MuiRadio-colorPrimary.Mui-checked {
+  color: #03a9f4 !important;
+}
+.MuiFormControlLabel-root{
+  margin: 0 !important;
+}
+.MuiFormControlLabel-label{
+  font-family: 'sans' !important;
+  direction: rtl;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+  padding: 9px;
+  padding-left: 62px !important;
+  padding-right: 10px !important;
+}
+.MuiFormLabel-root .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated{
+  top: 0 !important;
+}
+//.MuiFormLabel-root .MuiInputLabel-root .MuiInputLabel-formControl .MuiInputLabel-animated .MuiInputLabel-shrink .MuiFormLabel-filled{
+//  left: auto !important;
+//  font-size: 19px;
+//  color: #828282;
+//  font-weight: 100;
+//  top: 18px;
+//  right: -5px;
+//}
+
+
+@media only screen and (min-width: 1600px) {
+  .myContainer {
+    width: 1127px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+  .myContainer {
+    width: 933px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .myContainer {
+    width: 723px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .halfWidth{
+    width: 78%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .myContainer{
+    width: 91% !important;
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+  }
+  .sectionHeader{
+    font-size: 2em;
+    margin-top: 15px !important;
+  }
+  .sectionDescription{
+    font-size: 14px;
+    line-height: 25px;
+    padding: 0;
+  }
+  .customTextarea{
+    width: 100% !important;
+  }
+  .regFrame{
+    width: 100%;
+  }
+  .inputWithIconCustomStyle{
+    width: 80%;
+    height: 55px;
+    margin: 15px auto 25px;
+    display: flex !important;
+    .inputWithIconStyleIconText{
+      p{
+        font-size: 12px;
+      }
+    }
+    &:hover{
+      border: 1px solid #b9b9b9 !important;
+    }
+    svg{
+      color: #9f9f9f;
+      font-size: 18px;
+    }
+    input{
+      font-size: 15px;
+      color: $darkSilver;
+    }
+  }
+  .checkBoxStyle{
+    span{
+      font-size: 12px !important;
+    }
+  }
+  .outlineSetNewBtn{
+    //width: 100% !important;
+  }
+  .inRowFlexItemsSpaceBetween{
+    flex-direction: column;
+  }
+  .paymentSmallBtn{
+    width: 100%;
+  }
+  .dashboardPaymentButton{
+    margin-top: 100px !important;
+  }
+  .columnFlexInMobile{
+    flex-direction: column;
+  }
+  .persianSignature{
+    font-size: 22px;
+  }
+  .englishSignature{
+    font-size: 24px;
+  }
+  .itemsPlaceHolder{
+    flex-direction: column;
+    li{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  .simpleTextOnWhite{
+    font-size: 13px !important;
+  }
+}
+
+@media only screen and ( min-width: 767px) {
+  .customInput{
+    input[type='text'], input[type= 'password']{
+      min-width: 300px;
+    }
+  }
+}
+
+@media only screen and ( max-width: 991px) {
+  .halfWidth{
+    width: 100%;
+  }
+}

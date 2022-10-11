@@ -1,0 +1,400 @@
+@import "variables";
+
+
+/***************************** Styles fo Dark mode ****************************/
+body.dark-mode {
+    .darkModeSectionBorderStyle{
+      border: 1px solid #313131;;
+    }
+    .MuiIconButton-root{
+      color: $lightSilver !important;
+    }
+    .simpleTitleOnWhite{
+      @extend .rtlText;
+      font-size: 16px !important;
+      color: $textColorInDarkMode;
+    }
+    .dashboardSectionTitle{
+      color: $textColorInDarkMode;
+      border-bottom: 2px dashed #373737;
+    }
+    .dashSideMenuItem{
+      color: $textColorInDarkMode;
+      svg{
+        color: $textColorInDarkMode;
+      }
+    }
+    .mainPageContentFrame{
+      background-color: $darkModeMainBg;
+      border: 1px solid #373737;
+    }
+    .selectPagesMenu{
+      @extend .darkModeSectionBorderStyle;
+    }
+    .dashSideMenuFrame{ 
+      .dashSideMenuHeader{
+        @extend .darkModeSectionBorderStyle;
+        .dashSideMenuHeaderButtons {
+          li{
+            @extend .darkModeSectionBorderStyle;
+            .listButton{
+              color: $textColorInDarkMode;
+            }
+          }
+        }
+      }
+    }
+    // .dashSideMenuFrame{
+    //   ul{
+    //     li{
+    //       &:hover{
+    //         @include boxShadow(0px, 0px, 5px, #3b3b3b);
+    //       }
+    //     }
+    //   }
+    // }
+    .dashQuickAccessBoxes {
+      ul{
+        li{
+          @extend .darkModeSectionBorderStyle;
+          background-color: #10171d;
+        }
+      }
+    }
+    .sectionComponentWithHeader{
+      @extend .darkModeSectionBorderStyle;
+      background-color: #10171d;
+    }
+  
+    .mainPageContentFrame{
+      @extend .darkModeSectionBorderStyle;
+    }
+    .changeOperatorSelectFrame{
+      @extend .darkModeSectionBorderStyle;
+    }
+    .dashSideMenuFrame{
+      background-color: $darkModeMainBg;
+    }
+    .selectTypeRadioButtonsFrame{
+      position: relative;
+      margin-bottom: 35px;
+      .selectTypeRadioStyle{
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 25px 0;
+        li {
+          display: inline-block;
+        }
+        input {
+          visibility:hidden;
+        }
+        label {
+          cursor: pointer;
+          padding: 9px 20px;
+          font-size: 14px;
+          @include borderRadius(4px);
+          background-color: $darkModeMainBg !important;
+          @include boxShadow(0px, 0px, 5px, #3a3a3a);
+          @include transitionMaker(0.2s);
+          &:hover{
+            @include boxShadow(0px, 3px, 12px , #3a3a3a);
+          }
+        }
+        input:checked + label {
+          padding: 9px 20px;
+          font-size: 14px;
+          color: #fff;
+          background-color: $materialBlue !important;
+          @include borderRadius(4px);
+          // @include boxShadow(0px, 2px, 8px , #e6e6e6);
+        }
+      }
+      .nextLevelRadioFrameButton{
+        font-family: 'sans';
+        background: $deepOrange;
+        color: #fff;
+        float: left;
+        padding: 10px 25px;
+        font-size: 15px;
+        letter-spacing: -1px;
+        &:hover{
+          background: $darkOrange;
+        }
+      }
+    }
+    .customProfileInput{
+      label{
+        color: $darkSilver;
+      }
+      input[type='text'], input[type= 'password']{
+        color: darken( #fff, 5);
+        border: 1px solid $inputBorderColorInDarkMode !important;
+        &:hover{
+          background-color: #000 !important;
+        }
+        &:focus{
+          background-color: darken(#000, 2) !important;
+        }
+      }
+    }
+    .inputFileLabelStyle{
+      color: $textColorInDarkMode;
+      border: 1px solid $inputBorderColorInDarkMode !important;
+    }
+    .iconLabelOfInputStyle, .datepickerInputStyle, .fakeLabelOnInput{
+      color: $textColorInDarkMode
+    }
+    .datepickerInputFrame{
+      .inputIcon{
+        color: $textColorInDarkMode;
+      }
+    }
+  
+    .customLabelAndInput .inputPickerStyle{
+      background: $darkModeMainBg !important;
+      border: 1px solid $inputBorderColorInDarkMode !important;
+    }
+    
+    .customSelectOptionInRow {
+      border: 1px solid $inputBorderColorInDarkMode;
+      .inputLabel{
+        color: $middleSilver;
+      }
+    }
+    .customLabelAndInput{
+      label{
+        background-color: $darkModeMainBg;
+      }
+    }
+    .customLabelAndInput{
+      .inputTextStyleFrame{
+        color: $textColorInDarkMode;
+        border: 1px solid $inputBorderColorInDarkMode;
+      }
+    }
+    .inputTextStyleFrame{
+      input{
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: $textColorInDarkMode;
+          opacity: 1; /* Firefox */
+        }
+        
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: $textColorInDarkMode;
+        }
+        
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: $textColorInDarkMode;
+        }
+      }
+    }
+    .datepickerInputFrame .datepickerInputStyle, .customLabelAndInput .inputPriceStyleFrame{
+      background-color: $darkModeMainBg !important;
+      border: 1px solid $inputBorderColorInDarkMode !important;
+    }
+    .datepickerInputFrameFixedWidth .datepickerInputStyle, .customLabelAndInput .inputPriceStyleFrame{
+      background-color: $darkModeMainBg !important;
+      border: 1px solid $inputBorderColorInDarkMode !important;
+    }
+    .disableRegLayer{
+      background-color: rgba(16, 23, 29, 0.73);
+    }
+    .fullwidthTextareaFrame label{
+      background-color: $darkModeMainBg;
+      color: $textColorInDarkMode;
+    }
+    .fullwidthTextareaStyle input{
+      border: 1px solid $inputBorderColorInDarkMode;
+    }
+    .chartStyleFrame tspan{
+      fill: #fff;
+    }
+  
+    .tableOfContentRow{
+      ul{
+        &:hover{
+          box-shadow: none !important
+        }
+        .tableOfContentRowHeader{
+          background-color: #292929;
+        }
+        li{
+          color: $textColorInDarkMode;
+          
+        }
+        
+      }
+      
+    }
+    .tableOfContentStyle{
+      .tableOfContentDetailFrame{
+        border-top: 2px dotted #3b3b3b;
+        background: $darkModeMainBg;
+        color: $textColorInDarkMode;
+      }
+    }
+    .MuiMenu-list{
+      background-color: $darkModeMainBg !important;
+      li{
+        color: $textColorInDarkMode;
+      }
+    }
+    .MuiSelect-icon{
+      color: $textColorInDarkMode !important;
+    }
+    .dashboardSectionDevider{
+      border-bottom: 2px dashed #434343;
+      span{
+        position: relative;
+        top: 25px;
+        width: fit-content;
+        padding: 15px 25px;
+        background-color: rgb(41, 41, 41);
+        border: 2px dashed #434343;
+        box-shadow: 0 7px 25px #000000;
+        border-radius: 100px;
+        text-shadow: 0 7px 25px #000000;
+        font-weight: 900;
+        color: $middleSilver;
+      }
+    }
+    .modalContent{
+      background-color: #444;
+    }
+    .calendarContainer{
+      background-color: #444;
+      .dayWrapper{
+        button{
+          color: #fff;
+        }
+      }
+      .heading{
+        .title{
+          color: #fff;
+        }
+        &>button:hover{
+          background-color: #444;
+        }
+      }
+      .dayWrapper:not(.selected) button:hover{
+        background-color: #2b2b2b;
+      }
+      .yearsList{
+        button{
+          background-color: #444;
+          color: $lightSilver;
+          border: 1px solid  rgb(83, 83, 83);
+        }
+        .selected button:active{
+          background: $deepOrange !important;
+        }
+      }
+    
+      .monthsList{
+        button{
+          background-color: #444;
+          color: $lightSilver;
+          border: 1px solid rgb(83, 83, 83);
+        }
+      }
+      .yearsList button:hover {
+        background: #2b2b2b;
+        cursor: pointer;
+      }
+      .monthsList button:hover {
+        background: #2b2b2b;
+        cursor: pointer;
+      }
+    }
+    .MuiPickersBasePicker-pickerView, .MuiDialogActions-root{
+      background-color: #444;
+    }
+    .MuiPickersClockNumber-clockNumber{
+      color: $lightSilver;
+    }
+    .tableOfContentRowHeaderNotAccordion{
+      background-color: #292929;
+    }
+    .loadingFrameOnChart{
+      top: 175px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.18);
+      height: 400px;
+      position: absolute;
+      z-index: 1090;
+    }
+
+    .tableOfContentDetailFrame{
+      .detailFrame{
+        h5{
+          color: $textColorInDarkMode !important;
+        }
+        h6{
+          color: $textColorInDarkMode !important;
+        }
+      }
+      
+    }
+    .customLabelAndInputInRow {
+      label {
+        background: transparent !important;
+        color: $lightSilver;
+      }
+      input{
+        color: $lightSilver !important;
+      }
+    }
+    .editIcon{
+      color: $middleSilver !important;
+    }
+    .sendSMSTextArea{
+      border: 1px solid $inputBorderColorInDarkMode !important;
+      color: $textColorInDarkMode !important;
+      @include transitionMaker(0.3s);
+      &:focus{
+        border: 1px solid $lightMaterialBlue !important;
+      }
+    }
+    .radioItemStyle{
+      box-shadow: 0 0 5px #3a3a3a !important;
+      color: $textColorInDarkMode !important;
+      border: 1px solid $inputBorderColorInDarkMode !important;
+    }
+    .unCheckedRadioItemStyle{
+      border: 1px solid $inputBorderColorInDarkMode !important;
+      box-shadow: 0 0 5px #3a3a3a !important;
+      .selectServicePackIcon{
+        border: 1px solid $inputBorderColorInDarkMode !important;
+      }
+    }
+    .selectMultipleServicesFrame{
+      h4{
+        color: lighten($textColorInDarkMode, 4) !important;    
+      }
+    }
+    .unCheckedRadioItemStyle{
+      color: $textColorInDarkMode !important;    
+    }
+    .TitleWithArrowDownStyle{
+      border: 1px solid $inputBorderColorInDarkMode !important;
+    }
+    .selectChargeTypeStyle{
+      border: 1px solid $inputBorderColorInDarkMode !important;
+      box-shadow: 0 0 5px #3a3a3a !important;
+      label{
+        color: $textColorInDarkMode !important;
+      }
+      .icon{
+        border: 1px solid $inputBorderColorInDarkMode !important;
+      }
+    }
+    .TitleWithArrowDownStyle{
+      h4{
+        color: $textColorInDarkMode !important;
+      }
+    }
+  }

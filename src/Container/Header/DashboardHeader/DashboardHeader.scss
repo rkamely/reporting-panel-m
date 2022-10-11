@@ -1,0 +1,356 @@
+@import "../../../Styles/variables";
+@import "../../../Styles/mainStyles";
+@import "../../../Styles/mixins";
+
+
+.mainHeaderDashboardFrame{
+  // background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  z-index: 1099 !important;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 20px;
+  box-shadow: 0 6px 12px 0 rgba(0,0,0,.05);
+}
+.mainNavbar{
+  width: 100%;
+}
+.menuFrame{
+  display: inline-flex;
+  direction: rtl;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+  h1{
+    @extend .rtlText;
+    font-size: 1.2em;
+    font-weight: 100;
+    color: $darkBlue;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0;
+  }
+  .headerRight{
+    display: flex;
+    align-items: center;
+    h1{
+      @extend .rtlText;
+      font-size: 1.2em;
+      font-weight: 100;
+      color: $darkBlue;
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0;
+    }
+  }
+}
+.eachMenuItem{
+  @extend .rtlText;
+  display: flex !important;
+  flex-direction: row !important;
+  background: transparent !important;
+  align-items: center;
+  justify-content: left;
+  color: #d1d1d1 !important;
+  font-size: 23px;
+  padding: 10px 0;
+  .eachMenuIcon{
+    color: $lightBlue;
+    margin: 0 !important;
+    font-size: 23px;
+    margin-left: 3px !important;
+  }
+}
+.hamburgerMenuIcon{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  float: right;
+  color: $setareGreenLogo;
+  position: relative;
+  font-size: 32px;
+  margin: 14px 0;
+}
+.mobileRightOfMenu{
+  display: flex;
+  align-items: center;
+  width: auto;
+  a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  img{
+    float: right;
+    margin-left: 7px;
+    position: relative;
+    width: 50px;
+  }
+  h2{
+    @extend .rtlText;
+    margin: 0;
+    font-size: 1.5em;
+    // color: lighten($titleColorOnWhite, 4);
+  }
+}
+
+.currentCreditFrame{
+  color: $darkSilver;
+  min-width: 150px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-evenly;
+  div{
+    @extend .rtlText;
+    margin: 0 2px;
+  }
+}
+.headerDashMenuItems{
+  @extend .rtlText;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  a{
+    color: #d2d2d2 !important;
+    &:hover{
+      color: #FFFFFF !important;
+    }
+  }
+}
+.navbarLeftBtns{
+  position: relative;
+  z-index: 1003 !important;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+}
+
+
+.leftSideHeaderMenuButtons{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  li{
+    position: relative;
+    width: 65px;
+    height: 65px;
+    // border: 1px solid #e9e9e9;
+    padding: 0;
+    // background: #fff;
+    overflow: hidden;
+    margin: 0 15px 0 0;
+    @include boxShadow(0px, 3px, 7px, #e7e7e7);
+    @include borderRadius(5px);
+    .counterFrame{
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff1a1a;
+      // color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      padding-top: 2px;
+      @include borderRadius(100px);
+      top: 3px;
+      left: 3px;
+    }
+    a{
+      // background-color: #fff;
+      width: 100%;
+      height: 100%;
+      border: none !important;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #a5a5a5;
+      font-size: 12px;
+      svg{
+        margin: 0;
+        color: #a5a5a5;
+        font-size: 21px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+}
+.dashboardWalletButton{
+  padding: 0 20px !important;
+  border-radius: 2px !important;
+  color: #ededed !important;
+  font-size: 12px !important;
+  letter-spacing: 0 !important;
+  background-color: #606060 !important;
+  height: 45px;
+  transition-duration: 0.3s;
+  svg{
+    font-size: 30px;
+    margin-left: 6px;
+    color: #21c0d0;
+  }
+  &:hover{
+    background-color: lighten(#606060, 4) !important;
+
+  }
+}
+.dashboardOrderButton{
+  padding: 0 20px !important;
+  border-radius: 2px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  letter-spacing: 0 !important;
+  margin-right: 17px;
+  background-color: #00c063  !important;
+  height: 45px;
+  @include transitionMaker(0.3s);
+  svg{
+    font-size: 23px;
+    margin-left: 6px;
+    color: #f9f9f9;
+  }
+  &:hover{
+    background-color: darken(#00c063 , 4) !important;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .mainNavbar{
+    width: 88% !important;
+  }
+  .menuFrame{
+    h1{
+      margin-right: 0px;
+    }
+  }
+  .mainHeaderDashboardFrame{
+    padding: 3px 0;
+  }
+  //.navbarLeftBtns{
+  //  display: none;
+  //}
+  .mobileRightOfMenu{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .leftSideHeaderMenuButtons{
+    li{
+      width: 55px;
+      height: 55px;
+      .counterFrame{
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        font-size: 9px;
+      }
+    }
+  }
+}
+.changeOperatorSelectFrame{
+  @include borderRadius(4px);
+  margin-left: 10px;
+  border: 1px solid #e2e2e2 !important;
+  height: 50px;
+  width: 150px;
+  margin-left: 10px !important;
+  .inputLabel{
+    position: relative;
+    top: 15px;
+    padding-right: 10px;
+    font-size: 13px;
+  }
+  .MuiSelect-icon{
+    top: calc(50% - 18px) !important;
+  }
+}
+.MuiMenuItem-root{
+  direction: rtl;
+}
+.customSelectOptionInRow{
+  @include borderRadius(4px);
+  height: 50px;
+  min-width: 150px !important;
+  margin: 0 5px !important;
+  .inputLabel{
+    color: $titleColorOnWhite;
+    position: relative;
+    top: 15px;
+    padding-right: 10px;
+    font-size: 13px;
+    padding-left: 30px;
+  }
+  .MuiSelect-icon{
+    top: calc(50% - 18px) !important;
+  }
+  span.errorText{
+    color: $errorColor;
+    position: absolute;
+    bottom: -2px;
+    font-size: 10px;
+    right: 10px
+  }
+}
+
+
+
+
+body.dark-mode {
+ 
+  .leftSideHeaderMenuButtons{
+    li{
+      box-shadow: none;
+      border: 1px solid #313131;
+      a{
+        // background-color: red;
+      
+      }
+    }
+  }
+}
+
+
+
+body.light-mode {
+  .mainHeaderDashboardFrame{
+    background-color: #f9f9f9;
+  }
+  .leftSideHeaderMenuButtons{
+    li{
+      border: 1px solid #e9e9e9;
+      margin: 0 3px;
+      @include transitionMaker(0.2s);
+    }
+  }
+}
+
+body.dark-mode {
+  .mainHeaderDashboardFrame{
+    background-color: #000;
+  }
+  .leftSideHeaderMenuButtons{
+    li{
+      box-shadow: none;
+      border: 1px solid #313131;
+      margin: 0 3px;
+    }
+  }
+}
+
+
+
+
+
+

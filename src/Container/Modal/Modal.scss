@@ -1,0 +1,42 @@
+@import "../../Styles/mainStyles";
+@import "../../Styles/variables";
+
+
+.menuModalFrame{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.menuModalContent{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.dialogContainer{
+  .MuiDialog-paperWidthSm{
+    width: 100% !important;
+    margin: 0 !important;
+    background-color: rgba(39, 39, 39, 0.87) !important;
+  }
+}
+.mainMenuBackground{
+  background-color: rgba(76, 76, 76, 0.3) !important;
+}
+.menuModalDescription{
+  background-color: #fff;
+  ul{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .closeModalBtn{
+    @extend .rtlText;
+    color: $lightBlue;
+    background: none;
+    border: none;
+    margin-top: 30px;
+    display: flex;
+    font-size: 35px;
+  }
+}
+

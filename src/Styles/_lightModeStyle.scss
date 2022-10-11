@@ -1,0 +1,178 @@
+@import './variables';
+
+
+/**************************** Styles in light mode *****************************/
+body.light-mode{
+    .dashboardSectionTitle{
+      color: $titleColorOnWhite;
+      border-bottom: 2px dashed #ededed;
+    }
+    .simpleTitleOnWhite{
+      @extend .rtlText;
+      font-size: 16px !important;
+      color: $textColorOnWhite;
+    }
+    .selectPagesMenu{
+      background-color: #fff;
+    }
+    .mainPageContentFrame{
+      background-color: #fff;
+      border: 1px solid #e7e7e7;
+    }
+    .dashSideMenuItem{
+      color: $textColorOnWhite;
+    }
+    .leftSideHeaderMenuButtons{
+      li{
+        .counterFrame{
+          color: #fff !important;
+        }
+      }
+    }
+    .dashSideMenuHeader{
+      background-color: #fff;
+      .dashSideMenuHeaderButtons {
+        li{
+          border: 1px solid #eaeaea;
+        
+        }
+      }
+    }
+    .selectTypeRadioButtonsFrame{
+      position: relative;
+      margin-bottom: 35px;
+      .selectTypeRadioStyle{
+        position: relative;
+        list-style: none;
+        margin: 0;
+        padding: 25px 0;
+        color: $darkSilver;
+        li {
+          display: inline-block;
+        }
+        input {
+          visibility:hidden;
+        }
+        label {
+          cursor: pointer;
+          padding: 9px 20px;
+          font-size: 14px;
+          @include borderRadius(4px);
+          background-color: #fff !important;
+          @include boxShadow(0px, 0px, 5px, #d5d5d5);
+          @include transitionMaker(0.2s);
+          &:hover{
+            @include boxShadow(0px, 1px, 12px , #dddddd);
+          }
+        }
+        input:checked + label {
+          padding: 9px 20px;
+          font-size: 14px;
+          color: #fff;
+          background-color: $lightMaterialBlue !important;
+          @include borderRadius(4px);
+          @include boxShadow(0px, 2px, 8px , #e6e6e6);
+        }
+      }
+      .nextLevelRadioFrameButton{
+        font-family: 'sans';
+        background: $deepOrange;
+        color: #fff;
+        float: left;
+        padding: 10px 25px;
+        font-size: 15px;
+        letter-spacing: -1px;
+        &:hover{
+          background: $darkOrange;
+        }
+      }
+    }
+    .customProfileInput{
+      label{
+        color: $darkSilver;
+      }
+      input[type='text'], input[type= 'password']{
+        color: $textColorOnWhite;
+        border: 1px solid lighten($middleSilver, 2) !important;
+        &:hover{
+          background-color: $inputBorderColorInLightMode !important;
+        }
+        &:focus{
+          background-color: darken(#f9f9f9, 2) !important;
+        }
+      }
+    }
+    .fakeLabelOnInput{
+      color: $darkSilver;
+    }
+    .inputFileLabelStyle{
+      color: $middleSilver;
+    }
+    .iconLabelOfInputStyle{
+      color: $middleSilver;
+    }
+    .datepickerInputFrame{
+      .inputIcon{
+        color: $middleSilver;
+      }
+    }
+    .customLabelAndInput .inputPickerStyle{
+      background:#fff !important;
+      border: 1px solid $inputBorderColorInLightMode !important;
+    }
+    .customSelectOptionInRow{
+      border: 1px solid $inputBorderColorInLightMode !important;
+      .inputLabel{
+        color: $darkSilver;
+      }
+    }
+    .customLabelAndInput{
+      .inputTextStyleFrame{
+        color: #000;
+        border: 1px solid $inputBorderColorInLightMode;
+      }
+    }
+    .disableRegLayer{
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    .tableOfContentRow{
+      ul{
+        .tableOfContentRowHeader{
+          background-color: #f2f2f2;
+        }
+        li{
+          color: $textColorOnWhite
+        }
+      }
+    }
+    .tableOfContentStyle{
+      .tableOfContentDetailFrame{
+        border-top: 2px dotted #c8c8c8;
+        background: #fff;
+      }
+    }
+    .MuiMenu-list{
+      background-color: #fff !important;
+      li{
+        color: $textColorOnWhite;
+      }
+    }
+    .MuiSelect-icon{
+      color: $textColorOnWhite !important;
+    }
+    .dashSideMenuFrame{
+      background-color: #f9f9f9;
+    }
+    .loadingFrameOnChart{
+      top: 175px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #fff;
+      height: 400px;
+      position: absolute;
+      z-index: 1090;
+    }
+  }
+  

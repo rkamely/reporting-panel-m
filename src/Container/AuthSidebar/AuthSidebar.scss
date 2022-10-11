@@ -1,0 +1,95 @@
+@import "../../Styles/_variables.scss";
+@import "../../Styles/_mainStyles.scss";
+@import "../../Styles/_mixins.scss";
+
+
+
+.authSidebar{
+  position: fixed;
+  width: 800px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  padding: 50px;
+  //background-image: url('../../assets/images/sidebar2.png');
+  //background-color: $lightBlue;
+  //background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2{
+    @extend .rtlText;
+    font-size: 3.7em;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    font-weight: 100;
+    border-bottom: 2px solid #fff6;
+    padding-bottom: 8px;
+  }
+  h6{
+    margin: 5px;
+    font-size: 1em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 100;
+  }
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.sidebarBackBtn{
+  position: absolute;
+  background: transparent;
+  padding: 10px 30px;
+  border-radius: 100px;
+  color: #5dc4d9;
+  top: 50px;
+  transition-duration: 0.3s;
+  left: 60px;
+  font-size: 15px;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  &:hover{
+    color: $setareGreenLogo;
+  }
+  svg{
+    font-size: 26px;
+    margin-right: 5px;
+  }
+}
+.bottomBackBtn{
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+
+@media only screen and (max-width: 991px) {
+  .sidebarBackBtn{
+    position: relative;
+    padding: 10px 15px;
+    color: #fff;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .mobileAuthHeader{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding: 0 7px;
+  }
+  .simpleLinkText{
+    bottom: 0;
+  }
+}

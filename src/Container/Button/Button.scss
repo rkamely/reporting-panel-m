@@ -1,0 +1,125 @@
+@import "../../Styles/variables";
+@import "../../Styles/mainStyles";
+@import "../../Styles/mixins";
+
+.customBtn{
+    @extend .rtlText;
+    margin: 0 3px;
+    padding: 13px 20px;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+    @include borderRadius(2px);
+    @include transitionMaker(0.3s);
+    p{
+        display: flex;
+        svg{
+            font-size: 18px;
+            margin-right: 5px;
+        }
+    }
+    svg{
+        font-size: 18px;
+        margin-right: 5px;
+    }
+}
+.logOutBtn{
+    margin: 0 3px;
+    padding: 13px 20px;
+    outline: none;
+    background-color: transparent;
+    font-size: 15px;
+    border: 2px solid $darkOrange;
+    color: lighten($darkOrange, 3);
+    @include borderRadius(2px);
+    @include transitionMaker(0.3);
+    p{
+        display: flex;
+        svg{
+            font-size: 18px;
+            margin-right: 5px;
+        }
+    }
+    svg{
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    &:hover{
+        cursor: pointer;
+        border: 2px solid $darkOrange;
+        background-color: $darkOrange;
+        color: #fff;
+    }
+}
+
+.authBtn{
+    background-color: $warningColor !important;
+    @extend .rtlText;
+    min-height: 62px !important;
+    margin: 0 0 10px !important;
+    font-size: 18px !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #fff !important;
+    border: none;
+    cursor: pointer;
+    @include borderRadius(3px);
+    @include transitionMaker(0.4);
+    &:hover{
+        @include boxShadow(0, 3px, 3px, #ced2d5);
+    }
+    p{
+        text-align: center !important;
+    }
+}
+.loginNavBtn{
+    border: none;
+    color: #ffffff;
+    @include borderRadius(2px);
+}
+.registerNavBtn{
+    border: none;
+    color: #ffffff;
+    @include borderRadius(2px);
+}
+.loginNavBtn{
+    &:hover{
+        cursor: pointer;
+    }
+}
+.registerNavBtn{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.danger{
+    &:hover{
+        cursor: pointer;
+        border: 2px solid $errorColor;
+        background-color: $errorColor;
+        color: #fff;
+    }
+}
+.info{
+    border: 2px solid $infoColor;
+    color: lighten($infoColor, 15);
+    &:hover{
+        cursor: pointer;
+        border: 2px solid $infoColor;
+        background-color: $infoColor;
+        color: #fff;
+    }
+}
+
+.darkOrange{
+    border: 2px solid $warningColor;
+    color: lighten($warningColor, 15);
+    &:hover{
+        cursor: pointer;
+        border: 2px solid $warningColor;
+        background-color: $warningColor;
+        color: #fff;
+    }
+}

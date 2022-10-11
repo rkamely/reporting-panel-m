@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'sans';
+    src: local('sans'), url(iransans.woff) format('woff');
+}
+@font-face {
+    font-family: 'yekan';
+    src: local('yekan'), url(yekan.woff) format('woff');
+}

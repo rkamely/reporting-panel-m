@@ -1,0 +1,16 @@
+@import "../../Styles/mainStyles";
+@import "../../Styles/variables";
+
+.sidebarFrameHolder {
+  padding: 0 !important;
+  position: absolute !important;
+  width: 100%;
+  top: 0;
+  right: 1px;
+  z-index: 1002 !important;
+  height: 62px !important;
+  .sidebarFrame{
+    background-color: #ffffff !important;
+  }
+}
+
